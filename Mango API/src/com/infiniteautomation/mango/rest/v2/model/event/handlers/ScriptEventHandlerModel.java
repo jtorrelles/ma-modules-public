@@ -17,8 +17,8 @@ import io.swagger.annotations.ApiModel;
 @JsonTypeName(ScriptEventHandlerDefinition.TYPE_NAME)
 public class ScriptEventHandlerModel extends AbstractEventHandlerModel<ScriptEventHandlerVO> {
 
-    String fileStoreName;
-    String filename;
+    String script;
+    String engineName;
 
     public ScriptEventHandlerModel() {
     }
@@ -35,16 +35,16 @@ public class ScriptEventHandlerModel extends AbstractEventHandlerModel<ScriptEve
     @Override
     public ScriptEventHandlerVO toVO() {
         ScriptEventHandlerVO vo = super.toVO();
-        vo.setFileStoreName(this.fileStoreName);
-        vo.setFilename(this.filename);
+        vo.setScript(this.script);
+        vo.setEngineName(this.engineName);
         return vo;
     }
 
     @Override
     public void fromVO(ScriptEventHandlerVO vo) {
         super.fromVO(vo);
-        this.fileStoreName = vo.getFileStoreName();
-        this.filename = vo.getFilename();
+        this.script = vo.getScript();
+        this.engineName = vo.getEngineName();
     }
 
     @Override
@@ -54,20 +54,20 @@ public class ScriptEventHandlerModel extends AbstractEventHandlerModel<ScriptEve
         return handler;
     }
 
-    public String getFileStoreName() {
-        return fileStoreName;
+    public String getScript() {
+        return script;
     }
 
-    public void setFileStoreName(String fileStoreName) {
-        this.fileStoreName = fileStoreName;
+    public void setScript(String script) {
+        this.script = script;
     }
 
-    public String getFilename() {
-        return filename;
+    public String getEngineName() {
+        return engineName;
     }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
+    public void setEngineName(String engineName) {
+        this.engineName = engineName;
     }
 
 }
